@@ -18,25 +18,25 @@ Organización de las carpetas
     ├── LICENSE
     ├── README.md          <- presentación y estructura del proyecto para los usuarios.
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── requirements.txt   <- The requirements file (librerías y paquetes utilizados en el proyecto)
+    │     
     │
     ├── src               
     │   │
     │   ├── data           
     │   │   ├── processed        <- dataset limpio preparado para modelar
-            └── raw              <- dataset en crudo
-
+    │   │   └── raw              <- dataset en crudo
+    │   │
     │   ├── model  
     │   │   ├── best_model.pkl   <-mejor modelo entrenado listo para poner en producción
-
+    │   │
     │   ├── models 
-            ├── train.py         <- entrenamiento del mejor modelo      
-
+    │   │   ├── train.py         <- entrenamiento del mejor modelo      
+    │   │
     │   ├── utils                <- módulos y funciones auxiliares     
     │   │
     │   │
     │   ├── notebooks        
-    │       └── proyect_resume.ipynb (Memoria del proyecto, incluye EDA, pasos explicados, búsqueda del mejor modelo)
+    │   │    └── proyect_resume.ipynb (Memoría del proyecto-> EDA, pasos explicados, búsqueda del mejor modelo
 
 --------
