@@ -15,7 +15,7 @@ Como principal objetivo se desea predecir el riesgo de obesidad en el que se enc
 Organización de las carpetas
 ------------
 
-    ├── LICENSE`
+    ├── LICENSE
     ├── README.md          <- The top-level README for developers using this project.
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
@@ -24,13 +24,17 @@ Organización de las carpetas
     ├── src               
     │   │
     │   ├── data           
-    │   │   ├── processed      <- The final, canonical data sets for modeling.
-            └── raw            <- The original, immutable data dump.│
-    │   │
-    │   ├── model        
-    │   │   └── best_model.pkl
+    │   │   ├── processed      <- dataset limpio preparado para modelar
+            └── raw            <- dataset en crudo
+
+    │   ├── model  
+    │   │   ├── train.py         <- entrenamiento del mejor modelo      
+    │   │   └── best_model.pkl   <-mejor modelo entrenado listo para poner en producción
+
+    │   ├── utils             <- módulos y funciones auxiliares     
+    │   │
     │   │
     │   ├── notebooks        
-    │       └── proyect_resume.ipynb  (Memoria del proyecto, incluye EDA, paso explicados, busqueda del mejor modelo)
+    │       └── proyect_resume.ipynb (Memoria del proyecto, incluye EDA, pasos explicados, búsqueda del mejor modelo)
 
 --------
