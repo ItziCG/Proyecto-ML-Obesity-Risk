@@ -16,7 +16,7 @@ Organización de las carpetas
 ------------
 
     ├── LICENSE
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md          <- presentación y estructura del proyecto para los usuarios.
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
@@ -24,14 +24,16 @@ Organización de las carpetas
     ├── src               
     │   │
     │   ├── data           
-    │   │   ├── processed      <- dataset limpio preparado para modelar
-            └── raw            <- dataset en crudo
+    │   │   ├── processed        <- dataset limpio preparado para modelar
+            └── raw              <- dataset en crudo
 
     │   ├── model  
-    │   │   ├── train.py         <- entrenamiento del mejor modelo      
-    │   │   └── best_model.pkl   <-mejor modelo entrenado listo para poner en producción
+    │   │   ├── best_model.pkl   <-mejor modelo entrenado listo para poner en producción
 
-    │   ├── utils             <- módulos y funciones auxiliares     
+    │   ├── models 
+            ├── train.py         <- entrenamiento del mejor modelo      
+
+    │   ├── utils                <- módulos y funciones auxiliares     
     │   │
     │   │
     │   ├── notebooks        
