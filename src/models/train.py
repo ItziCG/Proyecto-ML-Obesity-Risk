@@ -50,7 +50,7 @@ for column in col_label:
 #Aplicamos labelEncoder a la target
 y_train_trans = label_encoder.fit_transform(y_train)
 
-#Entrenamos el modrlo con los mejores hiperparámetros escogidos
+#Entrenamos el modelo con los mejores hiperparámetros escogidos
 
 XGB_model = XGBClassifier(learning_rate= 0.1, max_depth= 4, n_estimators= 200,random_state=42)
 XGB_model.fit(X_train_trans, y_train_trans)
