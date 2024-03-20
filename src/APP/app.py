@@ -27,6 +27,7 @@ def home():
         smoke_yes = 1 if request.form['smoke'] == 'Yes' else 0
         scc_yes = 1 if request.form['scc'] == 'Yes' else 0
         
+        
         # Realizar la predicción con el modelo
         prediction = model.predict([[age, height, weight, fcvc, ncp, caec, ch2o, faf, tue, calc, mtrans, gender_male, family_yes, favc_yes, smoke_yes, scc_yes]])[0]
         
