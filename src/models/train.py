@@ -8,7 +8,7 @@ from xgboost import XGBClassifier
 import joblib
 
 #Carga de datos
-df=pd.read_csv('/Users/itziarc/Desktop/Proyecto-ML-Obesity-Risk/src/data/raw/train.csv')
+df=pd.read_csv('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/data/raw/train.csv')
 
 #Pasamos los nombres de las columnas a minúscula
 df.columns = df.columns.str.lower()
@@ -56,4 +56,4 @@ XGB_model = XGBClassifier(learning_rate= 0.1, max_depth= 4, n_estimators= 200,ra
 XGB_model.fit(X_train_trans, y_train_trans)
 
 # Guardar el modelo
-joblib.dump(XGB_model, 'best_model.pkl')
+joblib.dump(XGB_model, '/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/model.pkl')
