@@ -48,12 +48,13 @@ X_train_trans= pd.concat([X_train, transformed_df], axis=1).drop(columns=col_ohe
 joblib.dump(ohe, 'src/model/onehot_encoder.pkl')
 
 
-#Aplicamos labelEncoder a col_label
 label_encoder = LabelEncoder()
+label_encoders = {}
 for column in col_label:
     X_train_trans[column] = label_encoder.fit_transform(X_train_trans[column])
+    label_encoders[column] = label_encoder
 
-joblib.dump(label_encoder, 'src/model/label_encoder.pkl')
+joblib.dump(label_encoders, 'src/model/label_encoders.pkl')
 
 
 #Aplicamos labelEncoder a la target

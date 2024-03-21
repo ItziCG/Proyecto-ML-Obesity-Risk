@@ -18,11 +18,10 @@ traducciones = {
     'genero': {'masculino': 'Male', 'femenino': 'Female'},
     'antecedentes_obesidad': {'si': 'yes', 'no': 'no'},
     'consumo_calorias': {'si': 'yes', 'no': 'no'},
-    'consumo_entre_comidas': {'Mo': 'Sometimes', 'A veces': 'Sometimes', 'Frecuentemente': 'Frequently', 'Siempre': 'Always'},
     'fumador': {'si': 'yes', 'no': 'no'},
     'monitoreo_calorias': {'si': 'yes', 'no': 'no'},
-    'consumo_alcohol': {'No': 'no', 'A veces': 'Sometimes', 'Frecuentemente': 'Frequently'},
-    'consumo_entre_comidas': {'Nunca':'no', 'A veces':'Sometimes', 'Frecuentemente':'Frequently', 'Siempre':'Always'},
+    'consumo_alcohol': {'nunca': 'no', 'a_veces': 'Sometimes', 'frecuentemente': 'Frequently'},
+    'consumo_entre_comidas': {'nunca':'no', 'a_veces':'Sometimes', 'frecuentemente':'Frequently', 'siempre':'Always'},
     'medio_transporte':{'Caminar':'Walking', 'Bicileta':'Bike', 'Moto':'Motorbike', 'Coche':'Automobile', 'Transporte Público':'Public_Transportation'}
 }
 
