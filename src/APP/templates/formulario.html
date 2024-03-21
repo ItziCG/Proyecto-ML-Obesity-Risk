@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos</title>
+</head>
+<body>
+    <h2>Ingrese sus datos:</h2>
+    <form action="/prediccion" method="post">
+        <label for="genero">Género:</label>
+        <select name="genero" id="genero">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" min="0" max="100" required><br>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" name="altura" id="altura" step="0.01" required><br>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" name="peso" id="peso" step="0.1" required><br>
+
+        <label for="antecedentes_obesidad">Antecedentes familiares de obesidad:</label>
+        <select name="antecedentes_obesidad" id="antecedentes_obesidad">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="consumo_calorias">Consumo frecuente de alimentos ricos en calorías:</label>
+        <select name="consumo_calorias" id="consumo_calorias">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="ingesta_vegetales">Frecuencia de ingesta de vegetales en las comidas(1-3):</label>
+        <input type="number" name="ingesta_vegetales" id="ingesta_vegetales" min="1" max="3" required><br>
+
+        <label for="num_comidas_principales">Número de comidas principales(1-4):</label>
+        <input type="number" name="num_comidas_principales" id="num_comidas_principales" min="1" max="4" required><br>
+
+        <label for="consumo_entre_comidas">Consumo de alimentos entre comidas:</label>
+        <select name="consumo_entre_comidas" id="consumo_entre_comidas">
+            <option value="nunca">Nunca</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+            <option value="siempre">Siempre</option>
+        </select><br>
+
+        <label for="fumador">Fumador:</label>
+        <select name="fumador" id="fumador">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="consumo_agua_diario">Consumo de agua diario litros(1-3):</label>
+        <input type="number" name="consumo_agua_diario" id="consumo_agua_diario" min="1" max="3" required><br>
+
+        <label for="monitoreo_calorias">Monitoreo consumo calorías:</label>
+        <select name="monitoreo_calorias" id="monitoreo_calorias">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="frecuencia_actividad_fisica">Frecuencia actividad física(1-3):</label>
+        <input type="number" name="frecuencia_actividad_fisica" id="frecuencia_actividad_fisica" min="1" max="3" required><br>
+
+        <label for="tiempo_uso_tecnologico">Tiempo de uso de dispositivos tecnológicos(0-2):</label>
+        <input type="number" name="tiempo_uso_tecnologico" id="tiempo_uso_tecnologico" min="0" max="2" required><br>
+
+        <label for="consumo_alcohol">Consumo de alcohol:</label>
+        <select name="consumo_alcohol" id="consumo_alcohol">
+            <option value="nunca">Nunca</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+        </select><br>
+
+        <label for="medio_transporte">Medio de transporte:</label>
+        <select name="medio_transporte" id="medio_transporte">
+            <option value="caminar">Caminar</option>
+            <option value="bicicleta">Bicicleta</option>
+            <option value="moto">Moto</option>
+            <option value="coche">Coche</option>
+            <option value="transporte_publico">Transporte Público</option>
+        </select><br>
+
+        <input type="submit" value="Predecir">
+    </form>
+</body>
+</html>
