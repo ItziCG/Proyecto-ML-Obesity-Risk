@@ -22,7 +22,7 @@ traducciones = {
     'monitoreo_calorias': {'si': 'yes', 'no': 'no'},
     'consumo_alcohol': {'nunca': 'no', 'a_veces': 'Sometimes', 'frecuentemente': 'Frequently'},
     'consumo_entre_comidas': {'nunca':'no', 'a_veces':'Sometimes', 'frecuentemente':'Frequently', 'siempre':'Always'},
-    'medio_transporte':{'caminar':'Walking', 'bicicleta':'Bike', 'moto':'Motorbike', 'coche':'Automobile', 'transporte_publico':'Public_Transportation'}
+    'medio_transporte':{'caminar':'Walking', 'bicicleta':'Bike', 'moto':'Motorbike', 'coche':'Automobile', 'Transporte Público':'Public_Transportation'}
 }
 
 # Definir las columnas del DataFrame
@@ -67,9 +67,10 @@ def predecir_obesidad():
         transformed_df_ohe = pd.DataFrame(transformed_df, columns=onehot_encoder.get_feature_names_out(col_ohe), index=df_transformado.index)
         df_trans= pd.concat([df_transformado, transformed_df_ohe], axis=1).drop(columns=col_ohe)
         
-        for column, label_encoder in label_encoders.items():
-            if column in df_trans.columns:
-                df_trans[column] = label_encoder.transform(df_trans[column])
+        for column in col_label:
+            label_encoder = LabelEncoder()
+            X_train_trans[column] = label_encoder.fit_transform(X_train_trans[column])
+            joblib.dump(label_encoder, f'label_encoder_{column}.pkl')
           
 
         # Realizar la predicción utilizando el modelo y el DataFrame del usuario

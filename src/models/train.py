@@ -47,15 +47,10 @@ X_train_trans= pd.concat([X_train, transformed_df], axis=1).drop(columns=col_ohe
 
 joblib.dump(ohe, 'src/model/onehot_encoder.pkl')
 
-label_encoders = {}
-
 for column in col_label:
     label_encoder = LabelEncoder()
     X_train_trans[column] = label_encoder.fit_transform(X_train_trans[column])
-    label_encoders[column] = label_encoder
-
-# Guardar los LabelEncoders en un archivo utilizando joblib
-joblib.dump(label_encoders, 'src/model/label_encoders.pkl')
+    joblib.dump(label_encoder, f'label_encoder_{column}.pkl')
 
 
 #Aplicamos labelEncoder a la target
