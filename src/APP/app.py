@@ -22,7 +22,7 @@ traducciones = {
     'monitoreo_calorias': {'si': 'yes', 'no': 'no'},
     'consumo_alcohol': {'nunca': 'no', 'a_veces': 'Sometimes', 'frecuentemente': 'Frequently'},
     'consumo_entre_comidas': {'nunca':'no', 'a_veces':'Sometimes', 'frecuentemente':'Frequently', 'siempre':'Always'},
-    'medio_transporte':{'Caminar':'Walking', 'Bicileta':'Bike', 'Moto':'Motorbike', 'Coche':'Automobile', 'Transporte Público':'Public_Transportation'}
+    'medio_transporte':{'caminar':'Walking', 'bicicleta':'Bike', 'moto':'Motorbike', 'coche':'Automobile', 'transporte_publico':'Public_Transportation'}
 }
 
 # Definir las columnas del DataFrame
