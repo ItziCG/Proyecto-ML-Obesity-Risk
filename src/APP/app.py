@@ -76,12 +76,10 @@ def predecir_obesidad():
         resultado = modelo.predict(df_trans)
 
         # Convertir el resultado a una etiqueta legible
-        if resultado == 0:
-            nivel_obesidad = 'Bajo'
-        elif resultado == 1:
-            nivel_obesidad = 'Medio'
-        else:
-            nivel_obesidad = 'Alto'
+        mapeo_resultados = {0: 'Peso bajo', 1: 'Peso ideal', 2: 'Obesidad tipo I', 3:'Obesidad tipo II', 4:'Obesidad tipo III', 5:'Sobrepeso nivel I', 6:'Sobrepeso nivel II'}
+
+        # Convertir el resultado a una etiqueta legible
+        nivel_obesidad = mapeo_resultados.get(resultado, 'Desconocido')
 
         # Renderizar la plantilla de resultado y pasar el nivel de obesidad
         return render_template('resultado.html', nivel_obesidad=nivel_obesidad)
