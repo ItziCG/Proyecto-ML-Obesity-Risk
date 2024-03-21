@@ -5,10 +5,10 @@ import pandas as pd
 app = Flask(__name__)
 
 # Cargar el modelo previamente entrenado
-col_label=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_label.pkl')
+#col_label=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_label.pkl')
 col_ohe=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_ohe.pkl')
 esc_columns= joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/esc_columns.pkl')
-label_encoder=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/label_encoder.pkl')
+label_encoders=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/label_encoders.pkl')
 minmax_scaler=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/minmax_scaler.pkl')
 onehot_encoder=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/onehot_encoder.pkl')
 modelo = joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/best_model.pkl')
@@ -67,8 +67,10 @@ def predecir_obesidad():
         transformed_df_ohe = pd.DataFrame(transformed_df, columns=onehot_encoder.get_feature_names_out(col_ohe), index=df_transformado.index)
         df_trans= pd.concat([df_transformado, transformed_df_ohe], axis=1).drop(columns=col_ohe)
         
-        for column in col_label:
-            df_trans[column] = label_encoder.transform(df_trans[column])
+        for column in df_trans.columns:
+            if column in label_encoders:  
+                label_encoder_column = label_encoders[column]
+                df_trans[column] = label_encoder_column.transform(df_trans[column])
           
 
         # Realizar la predicción utilizando el modelo y el DataFrame del usuario
