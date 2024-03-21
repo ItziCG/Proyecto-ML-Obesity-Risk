@@ -67,10 +67,9 @@ def predecir_obesidad():
         transformed_df_ohe = pd.DataFrame(transformed_df, columns=onehot_encoder.get_feature_names_out(col_ohe), index=df_transformado.index)
         df_trans= pd.concat([df_transformado, transformed_df_ohe], axis=1).drop(columns=col_ohe)
         
-        for column in df_trans.columns:
-            if column in label_encoders:  
-                label_encoder_column = label_encoders[column]
-                df_trans[column] = label_encoder_column.transform(df_trans[column])
+        for column, label_encoder in label_encoders.items():
+            if column in df_trans.columns:
+                df_trans[column] = label_encoder.transform(df_trans[column])
           
 
         # Realizar la predicción utilizando el modelo y el DataFrame del usuario
