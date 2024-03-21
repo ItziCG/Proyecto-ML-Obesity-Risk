@@ -82,7 +82,7 @@ def predecir_obesidad():
         nivel_obesidad = mapeo_resultados.get(resultado, 'Desconocido')
 
         # Renderizar la plantilla de resultado y pasar el nivel de obesidad
-        return render_template('resultado.html', nivel_obesidad=nivel_obesidad)
+        return render_template('result.html', nivel_obesidad=nivel_obesidad)
 
 if __name__ == '__main__':
     app.run(debug=True)
