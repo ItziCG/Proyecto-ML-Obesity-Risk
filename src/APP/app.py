@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Cargar el modelo previamente entrenado
-#col_label=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_label.pkl')
+col_label=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_label.pkl')
 col_ohe=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/col_ohe.pkl')
 esc_columns= joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/esc_columns.pkl')
 label_encoders=joblib.load('/Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/model/label_encoders.pkl')
@@ -66,11 +66,6 @@ def predecir_obesidad():
         transformed_df= onehot_encoder.transform(df_transformado[col_ohe])
         transformed_df_ohe = pd.DataFrame(transformed_df, columns=onehot_encoder.get_feature_names_out(col_ohe), index=df_transformado.index)
         df_trans= pd.concat([df_transformado, transformed_df_ohe], axis=1).drop(columns=col_ohe)
-        
-        for column in col_label:
-            label_encoder = LabelEncoder()
-            X_train_trans[column] = label_encoder.fit_transform(X_train_trans[column])
-            joblib.dump(label_encoder, f'label_encoder_{column}.pkl')
           
 
         # Realizar la predicción utilizando el modelo y el DataFrame del usuario
