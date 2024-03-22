@@ -5,11 +5,11 @@ import pandas as pd
 app = Flask(__name__)
 
 # Cargar el modelo previamente entrenado
-col_ohe=joblib.load('src/model/col_ohe.pkl')
-esc_columns= joblib.load('src/model/esc_columns.pkl')
-minmax_scaler=joblib.load('src/model/minmax_scaler.pkl')
-onehot_encoder=joblib.load('src/model/onehot_encoder.pkl')
-modelo = joblib.load('src/model/best_model.pkl')
+col_ohe=joblib.load('col_ohe.pkl')
+esc_columns= joblib.load('esc_columns.pkl')
+minmax_scaler=joblib.load('minmax_scaler.pkl')
+onehot_encoder=joblib.load('onehot_encoder.pkl')
+modelo = joblib.load('best_model.pkl')
 
 # Definir el mapeo para traducir las respuestas del usuario
 traducciones = {
