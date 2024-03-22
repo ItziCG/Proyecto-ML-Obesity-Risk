@@ -4,7 +4,7 @@ FROM python:3.12
 WORKDIR /Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/src/App
 
 # Copia el archivo de requisitos de la aplicación al contenedor
-COPY /Users/uxue/Desktop/Proyecto-ML-Obesity-Risk/requirements.txt .
+COPY requirements.txt .
 
 # Instala las dependencias
 RUN pip install -r requirements.txt
