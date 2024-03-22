@@ -64,12 +64,18 @@
 
         .form-container {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centra verticalmente el contenido */
+            align-items: center; /* Centra horizontalmente el contenido */
             padding-right: 20px; /* Espacio entre el formulario y la imagen */
+            color: #050d2d; /* Color del texto a azul oscuro */
+            font-size: 20px; /* Tamaño del texto */
+            margin: auto; /* Centra el contenedor */
         }
 
-        .form-container form {
-            max-width: 400px;
-            width: 100%;
+        .form-container p {
+            margin: 10px 0; /* Añade espacio entre los párrafos */
         }
 
         .form-container form button {
@@ -81,6 +87,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 20px; /* Añade espacio encima del botón */
         }
 
         .form-container form button:hover {
@@ -107,10 +114,10 @@
         </div>
         <div class="content">
             <div class="form-container">
-                <p>Estás a un clik de conocer tu condición física</p>
-                <p>Para ello necesitaremos unos pocos datos sobre ti y tus hábitos</p>
-                        <form action="/formulario" method="GET">
-                          <button type="submit">Rellenar formulario</button>
+                <p style="font-size: 24px;">Estás a un clic de conocer tu condición física</p>
+                <p style="font-size: 24px;">Para ello necesitaremos unos pocos datos sobre ti y tus hábitos</p>
+                <form action="/formulario" method="GET">
+                    <button type="submit">Rellenar formulario</button>
                 </form>
             </div>
             <div class="image-container">
