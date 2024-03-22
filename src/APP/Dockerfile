@@ -12,9 +12,16 @@ RUN pip install -r requirements.txt
 # Copia el contenido actual del directorio al contenedor
 COPY . .
 
+COPY src/App/model/* /app/src/App/model/
+
 # Expone el puerto 5000 en el contenedor
 EXPOSE 5000
 
 # Ejecuta la aplicación Flask cuando se inicie el contenedor
 CMD ["python3", "app.py"]
+
+
+
+
+
 
