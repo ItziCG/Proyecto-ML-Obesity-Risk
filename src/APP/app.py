@@ -90,4 +90,4 @@ def predecir_obesidad():
         return render_template('result.html', nivel_obesidad=nivel_obesidad)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
