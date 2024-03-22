@@ -4,8 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado de Predicción</title>
+    <style>
+        body {
+            background-color: #fce8d5;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #050d2d;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 10px; 
+            background-color: #ff7f50;
+        }
+
+        h2 {
+            font-size: 24px; 
+        }
+
+        p {
+            font-size: 18px;
+            color: #050d2d; 
+            margin-top: 10px; 
+        }
+
+        .description {
+            font-size: 18px; 
+            color: #050d2d; 
+            margin-top: 20px; 
+        }
+
+       
+        #nivelObesidadText {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid white; 
+            border-radius: 5px;
+            background-color: orange; 
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-    <h2>Su nivel de obesidad es: {{ nivel_obesidad }}</h2>
+    <h1>Resultado del análisis</h1>
+    <h2>Su nivel de obesidad es:
+        <span id="nivelObesidadText"></span>
+    </h2>
+    <p class="description" id="descripcionObesidad"></p>
+
+    <script>
+    
+        var nivelObesidad = "{{ nivel_obesidad }}";
+
+       
+        var nivelObesidadText = document.getElementById('nivelObesidadText');
+        var descripcionObesidad = document.getElementById('descripcionObesidad');
+
+        switch (nivelObesidad) {
+            case "Peso bajo":
+                nivelObesidadText.textContent = "PESO BAJO";
+                descripcionObesidad.textContent = "Su peso está por debajo del rango saludable.";
+                break;
+            case "Peso ideal":
+                nivelObesidadText.textContent = "PESO IDEAL";
+                descripcionObesidad.textContent = "Se encuentra en un peso ideal. No deje de cuidar y mejorar sus hábitos.";
+                break;
+            case "Obesidad tipo I":
+                nivelObesidadText.textContent = "OBESIDAD TIPO I";
+                descripcionObesidad.textContent = "Tiene obesidad leve. Se recomienda un plan de dieta y ejercicio personalizado.";
+                break;
+            case "Obesidad tipo II":
+                nivelObesidadText.textContent = "OBESIDAD TIPO II";
+                descripcionObesidad.textContent = "Tiene obesidad moderada. Se aconseja una evaluación médica completa y seguimiento continuo.";
+                break;
+            case "Obesidad tipo III":
+                nivelObesidadText.textContent = "OBESIDAD TIPO III";
+                descripcionObesidad.textContent = "Tiene obesidad mórbida. Se necesita una intervención médica urgente y un tratamiento especializado.";
+                break;
+            case "Sobrepeso nivel I":
+                nivelObesidadText.textContent = "SOBREPESO NIVEL I";
+                descripcionObesidad.textContent = "Tiene sobrepeso leve. Se recomienda controlar la dieta y aumentar la actividad física.";
+                break;
+            case "Sobrepeso nivel II":
+                nivelObesidadText.textContent = "SOBREPESO NIVEL II";
+                descripcionObesidad.textContent = "Tiene sobrepeso moderado. Es importante iniciar un plan de alimentación y ejercicio supervisado.";
+                break;
+        }
+    </script>
 </body>
 </html>
