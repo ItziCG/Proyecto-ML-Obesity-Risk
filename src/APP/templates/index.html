@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: blue;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Peso saludable, un estilo de vida!</h1>
+        <!-- Aquí puedes agregar cualquier contenido adicional para la franja azul -->
+    </div>
+    <div class="content">
+        <p>Somos lo que comemos! Cuidar de nuestra salud es una prioridad, para ello debemos mantenernos en un peso saludable, cosa que se complica con mucha frecuencia.
+        El primer paso para empezar es conocer de donde partimos, para ello te pediremos unos datos y en solo un clik descubre tu nivel de peso.</p>
+        <form action="/formulario" method="GET">
+            <button type="submit">Rellenar formulario</button>
+        </form>
+    </div>
+</body>
+</html>
+
