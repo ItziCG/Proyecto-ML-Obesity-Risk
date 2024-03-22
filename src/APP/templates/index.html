@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #fce8d5; /* Cambia el color de fondo a naranja claro */
+        }
+
+        .container {
+            max-width: 100%; /* Ancho máximo al 100% */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .title-bar {
+            background-color: #050d2d; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            padding: 10px 0; /* Espacio alrededor del texto */
+            text-align: center; /* Alineación del texto al centro */
+            font-size: 24px; /* Tamaño del texto */
+            margin-bottom: 20px; /* Espacio debajo de la franja */
+        }
+
+        .title {
+            color: #050d2d; /* Cambia el color del texto a azul oscuro */
+            font-size: 28px; /* Tamaño del texto */
+            margin-bottom: 20px; /* Espacio debajo del título */
         }
 
         .header {
@@ -17,28 +40,83 @@
             padding: 20px;
             color: white;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: 300; /* Estilo de letra más fino */
         }
 
         .content {
+            display: flex;
+            justify-content: space-between; /* Espacio entre los elementos */
+            align-items: center; /* Alineación vertical al centro */
             background-color: white;
             padding: 20px;
             color: blue;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            flex: 1;
+            padding-right: 20px; /* Espacio entre el formulario y la imagen */
+        }
+
+        .form-container form {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container form button {
+            background-color: #ff8c00; /* Cambia el color del botón a naranja oscuro */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container form button:hover {
+            background-color: #ff7f50; /* Cambia el color del botón al pasar el mouse */
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+            max-height: 100%; /* La imagen se ajustará al alto del contenedor */
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Peso saludable, un estilo de vida!</h1>
-        <!-- Aquí puedes agregar cualquier contenido adicional para la franja azul -->
-    </div>
-    <div class="content">
-        <p>Somos lo que comemos! Cuidar de nuestra salud es una prioridad, para ello debemos mantenernos en un peso saludable, cosa que se complica con mucha frecuencia.
-        El primer paso para empezar es conocer de donde partimos, para ello te pediremos unos datos y en solo un clik descubre tu nivel de peso.</p>
-        <form action="/formulario" method="GET">
-            <button type="submit">Rellenar formulario</button>
-        </form>
+    <div class="container">
+        <div class="title-bar">Descubre tu nivel de peso: Predice tu estado de salud</div>
+        <div class="header">
+            <h1>Un peso saludable, es un estilo de vida!</h1>
+            <!-- Aquí puedes agregar cualquier contenido adicional para la franja azul -->
+        </div>
+        <div class="content">
+            <div class="form-container">
+                <p>Estás a un clik de conocer tu condición física</p>
+                <p>Para ello necesitaremos unos pocos datos sobre ti y tus hábitos</p>
+                        <form action="/formulario" method="GET">
+                          <button type="submit">Rellenar formulario</button>
+                </form>
+            </div>
+            <div class="image-container">
+                <img src="https://www.saludigestivo.es/wp-content/uploads/2021/05/bmi.jpg" alt="Imagen">
+            </div>
+        </div>
     </div>
 </body>
 </html>
-
