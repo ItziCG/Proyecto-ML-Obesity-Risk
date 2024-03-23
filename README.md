@@ -1,4 +1,4 @@
-Proyecto_ML_Obesity_Risk
+Proyecto ML Obesity Risk
 ==============================
 
 Proyecto de machine learning sobre el nivel de obesidad.
@@ -15,28 +15,61 @@ Como principal objetivo se desea predecir el riesgo de obesidad en el que se enc
 Organización de las carpetas
 ------------
 
-    ├── LICENSE
-    ├── README.md          <- presentación y estructura del proyecto para los usuarios.
-    │
-    ├── requirements.txt   <- The requirements file (librerías y paquetes utilizados en el proyecto)
-    │     
-    │
     ├── src               
     │   │
+    │   ├── App              <- Carpeta para la creacción de app con Flask          
+    │   │   ├── templates
+    │   │   │     ├── formulario.html
+    │   │   │     ├── index.html
+    │   │   │     └── result.html
+    │   │   │
+    │   │   ├── app.py         <- código de aplicación con Flask
+    │   │   │
+    │   │   │
+    │   │   └── Dockerfile     <- instrucciones para construir imagen Docker
+    │   │   
+    │   │   
     │   ├── data           
     │   │   ├── processed        <- dataset limpio preparado para modelar
     │   │   └── raw              <- dataset en crudo
     │   │
+    │   │
     │   ├── model  
-    │   │   ├── best_model.pkl   <-mejor modelo entrenado listo para poner en producción
+    │   │   ├── best_model.pkl      <- mejor modelo entrenado listo para poner en producción
+    │   │   ├── col_label.pkl       <- columnas label Encoder
+    │   │   ├── col_ohe.pkl         <- columnas one hot Encoder
+    │   │   ├── esc_columns.pkl     <- columnas a escalar
+    │   │   ├── label_encoder.pkl   <- label Encoder entrenado
+    │   │   ├── minmax_scaler.pkl   <- MinMax Escaler entrenado
+    │   │   └── onehot_encoder.pkl  <- one hot Encoder entrenado
+    │   │   
+    │   │
     │   │
     │   ├── models 
-    │   │   ├── train.py         <- entrenamiento del mejor modelo      
-    │   │
-    │   ├── utils                <- módulos y funciones auxiliares     
-    │   │
+    │   │   ├── train.py            <- entrenamiento del mejor modelo      
+    │   │  
     │   │
     │   ├── notebooks        
-    │   │    └── proyect_resume.ipynb (Memoría del proyecto-> EDA, pasos explicados, búsqueda del mejor modelo
+    │   │   └── proyect_resume.ipynb  <- (Memoría del proyecto-> EDA, pasos explicados, búsqueda del mejor modelo)
+    │   │
+    │   │
+    │   ├── utils                    <- módulos y funciones auxiliares
+    │   │ 
+    │   │
+    │   │ 
+    │   └── presentación
+    │        └── obesity_ml.pptx     <- Power point exposición proyecto
+    │      
+    │
+    │  
+    ├── LICENSE
+    │   
+    │   
+    ├── README.md          <- presentación y estructura del proyecto y sus carpetas para los usuarios.
+    │
+    │   
+    ├── requirements.txt   <- The requirements file (librerías y paquetes utilizados en el proyecto)
+    │     
+    │
 
 --------
