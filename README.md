@@ -58,7 +58,8 @@ Organización de las carpetas
     │   │
     │   │ 
     │   └── presentación
-    │        └── obesity_ml.pptx     <- Power point exposición proyecto
+    │       ├── images              <- imágenes del notebook de los gráficos guardadas
+    │       └── obesity_ml.pptx     <- Power point exposición proyecto
     │      
     │
     │  
